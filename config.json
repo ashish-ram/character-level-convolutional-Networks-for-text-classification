@@ -1,0 +1,65 @@
+{
+  "notes": "default",
+  "data": {
+    "alphabet": "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}",
+    "alphabet_size": 69,
+    "input_size": 1014,
+    "num_of_classes": 12,
+    "training_data_x": "./data/xtrain_obfuscated.txt",
+    "training_labels_y": "./data/ytrain.txt",
+    "validation_data_x": "./data/xval_obfuscated.txt",
+    "validation_labels_y": "./data/yval.txt",
+    "test_x": "./data/xtest_obfuscated.txt"
+  },
+  "model": "char_cnn_zhang",
+  "training": {
+    "epochs": 100,
+    "validation_split": 0.2,
+    "batch_size": 400,
+    "evaluate_every": 200,
+    "checkpoint_every": 1000
+  },
+  "char_cnn_zhang": {
+    "embedding_size": 128,
+    "conv_layers": [
+      [
+        256,
+        7,
+        3
+      ],
+      [
+        256,
+        7,
+        3
+      ],
+      [
+        256,
+        3,
+        -1
+      ],
+      [
+        256,
+        3,
+        -1
+      ],
+      [
+        256,
+        3,
+        -1
+      ],
+      [
+        256,
+        3,
+        3
+      ]
+    ],
+    "fully_connected_layers": [
+      300,
+      300
+    ],
+    "threshold": 1e-6,
+    "dropout_p": 0.5,
+    "optimizer": "adam",
+    "loss": "categorical_crossentropy"
+  }
+}
