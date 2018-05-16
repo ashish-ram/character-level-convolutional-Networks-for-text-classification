@@ -18,3 +18,4 @@ We split the training data in training and heldout data. The heldout data will b
 
 Initially the model is trained just for 15 epochs which reseult in about 59% accuracy on validation dataset. In the research paper, the author report results close to state of the art in classification task.
 
+Training was done on GPUs on floydhub. The floydhub project can be found [here] (https://www.floydhub.com/ashish_ram/projects/text-classification)
